@@ -491,7 +491,18 @@ console.log(ticketPriceTotal);
 // Now that you have used .forEach(), .map(), .filter(), and .reduce().  I want you to think of potential problems you could solve given the data set and the 5k fun run theme.  Try to create and then solve 3 unique problems using one or many of the array methods listed above.
 
 // Problem 1
-
+// Employees who work for companies with very long names
+let longCompanyNames = runners.filter(
+  longname => longname.company_name.length > 9
+);
+console.log(longCompanyNames);
 // Problem 2
-
+// What if everyone donated.. twice that amount?!
+let doubleOrNothing = runners.reduce(function(accumulator, value) {
+  return accumulator + value.donation * 2;
+}, 0);
+console.log(doubleOrNothing);
 // Problem 3
+// All employees with intel email addresses
+let intelEmployees = runners.filter(intel => intel.email.includes('@intel')); // Only one overachiever, Shell Baine
+console.log(intelEmployees);

@@ -1,16 +1,18 @@
 // ==== Challenge 1: Write your own closure ====
 // Write a simple closure of your own creation.  Keep it simple!
 
+const secretIdentityFirst = 'Bruce';
 function batman() {
-  let secretIdentity = 'Bruce Wayne';
+  const secretIdentityLast = 'Wayne';
   function joker() {
-    console.log(`Why hello there Batman, or should i say... ${secretIdentity}`);
+    console.log(
+      `Why hello there Batman, or should i say... ${secretIdentityFirst} ${secretIdentityLast}`
+    );
   }
-  return joker;
+  return joker();
 }
 
-let gotham = batman();
-console.log(gotham());
+batman();
 
 /* STRETCH PROBLEMS, Do not attempt until you have completed all previous tasks for today's project files */
 

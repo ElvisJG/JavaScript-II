@@ -53,6 +53,3 @@ const counterFactory = () => {
 };
 
 const newestCounter = counterFactory();
-newestCounter.increment();
-newestCounter.increment();
-console.log(newestCounter);

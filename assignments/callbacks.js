@@ -29,24 +29,50 @@ function getLength(arr, cb) {
   return cb(arr.length);
 }
 
-console.log(getLength(items));
+getLength(items, length => {
+  console.log(length);
+});
 
 function last(arr, cb) {
   // last passes the last item of the array into the callback.
+  return cb(arr[arr.length - 1]);
 }
+
+last(items, final => {
+  console.log(final);
+});
 
 function sumNums(x, y, cb) {
   // sumNums adds two numbers (x, y) and passes the result to the callback.
+  return cb(x + y);
 }
+
+sumNums(4, 4, add => {
+  console.log(add);
+});
 
 function multiplyNums(x, y, cb) {
   // multiplyNums multiplies two numbers and passes the result to the callback.
+  return cb(x * y);
 }
+
+multiplyNums(4, 4, x => {
+  console.log(x);
+});
 
 function contains(item, list, cb) {
   // contains checks if an item is present inside of the given array/list.
   // Pass true to the callback if it is, otherwise pass false.
+  return cb(list.includes(item));
 }
+
+contains('Pencil', items, check => {
+  console.log(check);
+});
+
+contains('Grapefruit', items, check => {
+  console.log(check);
+});
 
 /* STRETCH PROBLEM */
 
@@ -54,4 +80,21 @@ function removeDuplicates(array, cb) {
   // removeDuplicates removes all duplicate values from the given array.
   // Pass the duplicate free array to the callback function.
   // Do not mutate the original array.
+  return cb(array);
 }
+
+const items2 = [
+  'Pirate',
+  'Pirate',
+  'Pirate',
+  'Pirate',
+  'Skull and Crossbones',
+  'Gun',
+  'Treasure',
+  'Pirate'
+];
+
+dupechecker = [...new Set(items2)];
+removeDuplicates(dupechecker, dupeCheck => {
+  console.log(dupeCheck);
+});
